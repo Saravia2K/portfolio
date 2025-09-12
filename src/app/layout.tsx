@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
-import Galaxy from "@/components/react-bits/galaxy";
+import Background from "./components/Background";
 
 import "./globals.css";
 
@@ -24,10 +24,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`min-w- h-dvh min-h-dvh w-screen max-w-screen bg-black lg:max-h-dvh lg:overflow-y-hidden ${onestFont.className}`}
+        className={`${onestFont.className} min-w- relative h-dvh min-h-dvh w-screen max-w-screen bg-black pt-40 lg:max-h-dvh lg:overflow-y-hidden`}
       >
-        <Galaxy mouseRepulsion={false} mouseInteraction={false} />
-        {children}
+        <Background>{children}</Background>
       </body>
     </html>
   );
