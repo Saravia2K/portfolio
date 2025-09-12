@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Galaxy from "@/components/react-bits/galaxy";
 
 import "./globals.css";
 
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="min-w- h-dvh min-h-dvh w-screen max-w-screen bg-black lg:max-h-dvh lg:overflow-y-hidden">
+        <Galaxy mouseRepulsion={false} mouseInteraction={false} />
+        {children}
+      </body>
     </html>
   );
 }
