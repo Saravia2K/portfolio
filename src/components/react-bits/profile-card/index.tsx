@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import "./ProfileCard.css";
 
 interface ProfileCardProps {
-  avatarUrl: string;
+  avatarUrl: StaticImageData;
   iconUrl?: string;
   grainUrl?: string;
   behindGradient?: string;
@@ -14,7 +14,7 @@ interface ProfileCardProps {
   enableTilt?: boolean;
   enableMobileTilt?: boolean;
   mobileTiltSensitivity?: number;
-  miniAvatarUrl?: string;
+  miniAvatarUrl?: StaticImageData;
   name?: string;
   title?: string;
   handle?: string;
@@ -57,7 +57,7 @@ const easeInOutCubic = (x: number): number =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
-  avatarUrl = "<Placeholder for avatar URL>",
+  avatarUrl,
   iconUrl = "<Placeholder for icon URL>",
   grainUrl = "<Placeholder for grain URL>",
   behindGradient,
@@ -329,7 +329,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               className="avatar"
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
-              loading="lazy"
+              priority
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = "none";
@@ -342,16 +342,16 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                     <Image
                       src={miniAvatarUrl || avatarUrl}
                       alt={`${name || "User"} mini avatar`}
-                      loading="lazy"
+                      priority
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.opacity = "0.5";
-                        target.src = avatarUrl;
+                        target.src = avatarUrl.src;
                       }}
                     />
                   </div>
                   <div className="pc-user-text">
-                    <div className="pc-handle">@{handle}</div>
+                    <div className="pc-handle">{handle}</div>
                     <div className="pc-status">{status}</div>
                   </div>
                 </div>
