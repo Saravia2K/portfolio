@@ -1,6 +1,7 @@
 import CountUp from "@/components/react-bits/count-up";
 import MainStack from "./components/MainStack";
 import Techs from "./components/Techs";
+import Experience from "@/components/sections/experience";
 
 export default function Page() {
   const yearsOfExperiencie = new Date().getFullYear() - 2017;
@@ -21,6 +22,7 @@ export default function Page() {
       </div>
       <MainStack />
       <Techs />
+      <Experience />
     </>
   );
 }

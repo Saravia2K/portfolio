@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
+import moment from "moment";
 import Background from "./components/Background";
 
 import "./globals.css";
+import "moment/locale/es";
 
 export const metadata: Metadata = {
   title: "Diego Saravia",
@@ -15,6 +17,8 @@ const onestFont = Onest({
   weight: ["100", "200", "300", "400", "500", "600", "800", "900"],
   subsets: ["latin"],
 });
+
+moment.locale("es");
 
 export default function RootLayout({
   children,
