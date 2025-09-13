@@ -6,7 +6,7 @@ import EXPERIENCE from "@/assets/json/experience";
 
 export default function Experience() {
   return (
-    <section>
+    <section className="mt-30">
       <SectionTitle>Experiencia</SectionTitle>
 
       <Timeline>

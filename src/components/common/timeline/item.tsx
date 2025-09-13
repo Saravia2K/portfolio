@@ -15,7 +15,7 @@ export default function TimelineItem(props: TimelineItemProps) {
 
   const ToDateContainer = toIsToday || current ? "div" : "time";
   return (
-    <li className="ms-4 mb-10">
+    <li className="ms-4 [&:not(:last-child)]:mb-10">
       <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
       <div className="mb-1 flex justify-between text-sm leading-none font-normal text-gray-400 capitalize dark:text-gray-500">
         <div className="flex gap-4">

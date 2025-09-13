@@ -16,3 +16,14 @@ export type ExperienceItem = {
   current?: boolean;
   techs: Tech[];
 };
+
+export type EducationItem = {
+  institution: string;
+  career: string;
+  location: string;
+  years: {
+    from: number;
+    to: number;
+  };
+  finished: boolean;
+};
