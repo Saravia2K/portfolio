@@ -6,6 +6,7 @@ import Django from "@/components/icons/techs/django";
 import Docker from "@/components/icons/techs/docker";
 import Expressjs from "@/components/icons/techs/expressjs";
 import FastAPI from "@/components/icons/techs/fastapi";
+import Firebase from "@/components/icons/techs/firebase";
 import Laravel from "@/components/icons/techs/laravel";
 import MaterialUI from "@/components/icons/techs/materialui";
 import MongoDB from "@/components/icons/techs/mongodb";
@@ -29,6 +30,7 @@ import Swagger from "@/components/icons/techs/swagger";
 import TailwindCSS from "@/components/icons/techs/tailwind_css";
 import TansStackQuery from "@/components/icons/techs/tanstack_query";
 import Twilio from "@/components/icons/techs/twilio";
+import WordPress from "@/components/icons/techs/wordpress";
 
 const TECHS = {
   REACT: { icon: React, text: "React" },
@@ -62,5 +64,7 @@ const TECHS = {
   SHADCN: { icon: shadcnui, text: "Shadcn/ui" },
   STYLED_COMPONENTS: { icon: StyledComponents, text: "Styled Components" },
   SWAGGER: { icon: Swagger, text: "Swagger" },
+  WORDPRESS: { icon: WordPress, text: "WordPress" },
+  FIREBASE: { icon: Firebase, text: "Firebase" },
 };
 export default TECHS;

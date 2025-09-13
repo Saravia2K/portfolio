@@ -5,14 +5,13 @@ import {
 } from "@/components/ui/tooltip";
 
 import TECHS from "@/assets/json/techs";
+import SectionTitle from "@/components/common/section-title";
 
 export default function MainStack() {
   return (
     <section className="mt-30">
-      <h3 className="text-center text-3xl font-bold text-(--chart-1)">
-        Stack principal
-      </h3>
-      <div className="mt-5 flex justify-center gap-7 text-5xl">
+      <SectionTitle>Stack principal</SectionTitle>
+      <div className="flex justify-center gap-7 text-5xl">
         {MAIN_STACK.map(({ icon: I, text }, i) => (
           <Tooltip key={i}>
             <TooltipTrigger>

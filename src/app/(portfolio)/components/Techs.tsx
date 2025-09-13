@@ -9,7 +9,7 @@ import TECHS from "@/assets/json/techs";
 
 export default function Techs() {
   return (
-    <section className="mt-10">
+    <section className="mt-10 mb-30">
       <div className="flex gap-3 font-bold text-(--chart-2)">
         <Layers />
         <h3>Demás tecnologías</h3>
@@ -58,5 +58,6 @@ const CATEGORIES = {
     TECHS.POSTMAN,
     TECHS.SWAGGER,
     TECHS.TWILIO,
+    TECHS.FIREBASE,
   ],
 };
