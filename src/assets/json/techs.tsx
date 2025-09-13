@@ -1,6 +1,7 @@
 import Angular from "@/components/icons/techs/angular";
 import Astro from "@/components/icons/techs/astro";
 import Atlassian from "@/components/icons/techs/atlassian";
+import AWS from "@/components/icons/techs/aws";
 import BetterAuth from "@/components/icons/techs/better_auth";
 import Django from "@/components/icons/techs/django";
 import Docker from "@/components/icons/techs/docker";
@@ -66,5 +67,6 @@ const TECHS = {
   SWAGGER: { icon: Swagger, text: "Swagger" },
   WORDPRESS: { icon: WordPress, text: "WordPress" },
   FIREBASE: { icon: Firebase, text: "Firebase" },
+  AWS: { icon: AWS, text: "AWS" },
 };
 export default TECHS;

@@ -60,4 +60,5 @@ const CATEGORIES = {
     TECHS.TWILIO,
     TECHS.FIREBASE,
   ],
+  cloud: [TECHS.AWS],
 };
