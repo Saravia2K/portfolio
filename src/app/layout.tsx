@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${onestFont.className} min-w- relative h-dvh min-h-dvh w-screen max-w-screen bg-black pt-40 lg:max-h-dvh lg:overflow-y-hidden`}
+        className={`${onestFont.className} relative min-h-dvh w-screen max-w-screen min-w-screen bg-black pt-40`}
       >
         <Background>{children}</Background>
       </body>
