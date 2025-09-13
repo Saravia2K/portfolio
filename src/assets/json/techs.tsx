@@ -5,6 +5,7 @@ import AWS from "@/components/icons/techs/aws";
 import BetterAuth from "@/components/icons/techs/better_auth";
 import Django from "@/components/icons/techs/django";
 import Docker from "@/components/icons/techs/docker";
+import DotNet from "@/components/icons/techs/dotnet";
 import Expressjs from "@/components/icons/techs/expressjs";
 import FastAPI from "@/components/icons/techs/fastapi";
 import Firebase from "@/components/icons/techs/firebase";
@@ -68,5 +69,6 @@ const TECHS = {
   WORDPRESS: { icon: WordPress, text: "WordPress" },
   FIREBASE: { icon: Firebase, text: "Firebase" },
   AWS: { icon: AWS, text: "AWS" },
+  DOTNET: { icon: DotNet, text: ".Net" },
 };
 export default TECHS;

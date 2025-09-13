@@ -49,7 +49,7 @@ const CATEGORIES = {
     TECHS.MONGODB,
     TECHS.SQLITE,
   ],
-  "fullstack frameworks": [TECHS.LARAVEL, TECHS.DJANGO],
+  "fullstack frameworks": [TECHS.LARAVEL, TECHS.DJANGO, TECHS.DOTNET],
   UI: [TECHS.SHADCN, TECHS.TAILWINDCSS],
   librerias: [TECHS.REDUX, TECHS.RXJS, TECHS.SOCKETIO, TECHS.STYLED_COMPONENTS],
   herramientas: [
