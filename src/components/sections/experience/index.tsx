@@ -1,21 +1,33 @@
+"use client";
+
 import SectionTitle from "@/components/common/section-title";
 import Timeline from "@/components/common/timeline";
 import TimelineItem from "@/components/common/timeline/item";
+import PageSection from "@/components/common/page-section";
 
 import EXPERIENCE from "@/assets/json/experience";
+import IncompleteList from "@/components/common/incomplete-list";
 
-export default function Experience() {
+export default function Experience({ asPage }: ExperienceProps) {
   return (
-    <section className="mt-30">
+    <PageSection asPage={asPage}>
       <SectionTitle>Experiencia</SectionTitle>
 
-      <Timeline>
-        {EXPERIENCE.reverse().map(({ description, ...e }, i) => (
+      <IncompleteList
+        containerComponent={Timeline}
+        full={asPage}
+        href="/experiencia"
+        list={EXPERIENCE.reverse()}
+        render={({ description, ...e }, i) => (
           <TimelineItem key={i} {...e}>
             {description}
           </TimelineItem>
-        ))}
-      </Timeline>
-    </section>
+        )}
+      />
+    </PageSection>
   );
 }
+
+type ExperienceProps = {
+  asPage?: boolean;
+};
