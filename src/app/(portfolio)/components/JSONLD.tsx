@@ -21,6 +21,7 @@ export default function JSONLD() {
 
   return (
     <Script
+      id="json-ld-script"
       type="application/ld+json"
       strategy="beforeInteractive"
       dangerouslySetInnerHTML={{
