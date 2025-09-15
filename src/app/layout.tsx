@@ -2,14 +2,23 @@ import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import moment from "moment";
 import Background from "./components/Background";
+import Footer from "./components/Footer";
 
 import "./globals.css";
 import "moment/locale/es";
-import Footer from "./components/Footer";
+import meImg from "@/assets/images/profile_pic.png";
 
 export const metadata: Metadata = {
   title: "Diego Saravia",
   description: "Mi portafolio",
+  openGraph: {
+    title: "Portafolio de Diego Saravia",
+    description:
+      "Mira el camino que he recorrido en mi carrera profesional y como puedo ayudarte a cumplir los objetivos digitales que tienes para tu negocio",
+    type: "website",
+    locale: "es",
+    images: meImg.src,
+  },
 };
 
 const onestFont = Onest({
