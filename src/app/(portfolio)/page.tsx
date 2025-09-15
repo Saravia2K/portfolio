@@ -13,15 +13,17 @@ export default function Page() {
       <h1 className="text-center text-5xl font-bold uppercase sm:text-6xl lg:text-start xl:text-7xl">
         Ingeniero de <span className="text-(--chart-4)">Software</span>
       </h1>
-      <h2 className="mt-4 text-justify text-[1.25rem] xl:text-start">
+      <h2 className="mt-4 text-justify text-[1rem] sm:text-[1.25rem] xl:text-start">
         Apacionado por la construcción de excelentes apliaciones web intuitivas
         con experiencia de usuario profesional.
       </h2>
-      <div className="mt-5 flex items-center gap-4 text-2xl">
-        <span className="text-8xl font-bold">
+      <div className="mt-5 flex items-center gap-4">
+        <span className="text-6xl font-bold sm:text-8xl">
           +<CountUp to={yearsOfExperiencie} delay={1} />
         </span>
-        <span>años de experiencia desarrollando software profesional.</span>
+        <span className="text-[0.9rem] sm:text-2xl">
+          años de experiencia desarrollando software profesional.
+        </span>
       </div>
       <MainStack />
       <Techs />

@@ -12,8 +12,8 @@ export default function Contact({ asPage }: AsPage) {
     <PageSection asPage={asPage}>
       <SectionTitle>Contáctame</SectionTitle>
       <form>
-        <div className="mb-10 grid grid-cols-2 gap-10">
-          <div>
+        <div className="mb-10 gap-10 sm:grid sm:grid-cols-2">
+          <div className="max-sm:mb-10">
             <Label htmlFor="name">Nombre</Label>
             <Input
               id="name"
@@ -24,7 +24,12 @@ export default function Contact({ asPage }: AsPage) {
           </div>
           <div>
             <Label htmlFor="email">Correo</Label>
-            <Input id="email" placeholder="Escribe tu correo electrónico" />
+            <Input
+              id="email"
+              placeholder="Escribe tu correo electrónico"
+              type="email"
+              required
+            />
           </div>
         </div>
         <div>
