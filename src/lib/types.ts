@@ -36,6 +36,6 @@ export type Project = {
   banner: StaticImageData;
 };
 
-export type AsPage<T = {}> = {
+export type AsPage<T = object> = {
   asPage?: boolean;
 } & T;
