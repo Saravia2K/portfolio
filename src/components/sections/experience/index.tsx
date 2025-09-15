@@ -18,7 +18,7 @@ export default function Experience({ asPage }: AsPage) {
         containerComponent={Timeline}
         full={asPage}
         href="/experiencia"
-        list={EXPERIENCE.reverse()}
+        list={EXPERIENCE.slice().reverse()}
         render={({ description, ...e }, i) => (
           <TimelineItem key={i} {...e}>
             {description}

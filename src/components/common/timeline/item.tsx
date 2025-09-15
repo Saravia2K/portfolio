@@ -14,9 +14,7 @@ export default function TimelineItem(props: TimelineItemProps) {
 
   const fromMoment = moment(from);
   const toMoment = moment(to);
-  const toIsToday = toMoment.isSame(new Date(), "day");
 
-  const ToDateContainer = toIsToday || current ? "div" : "time";
   return (
     <li className="ms-4 not-[:last-child]:mb-10">
       <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
@@ -26,11 +24,9 @@ export default function TimelineItem(props: TimelineItemProps) {
             {fromMoment.format("MMMM YYYY")}
           </time>
           <span>-</span>
-          <ToDateContainer
-            dateTime={!toIsToday ? toMoment.format("YYYY-MM-DD") : undefined}
-          >
-            {toIsToday ? "Actualmente" : toMoment.format("MMMM YYYY")}
-          </ToDateContainer>
+          <time dateTime={current ? undefined : toMoment.format("YYYY-MM-DD")}>
+            {current ? "Actualmente" : toMoment.format("MMMM YYYY")}
+          </time>
         </div>
         <span className="text-end">{location}</span>
       </div>
