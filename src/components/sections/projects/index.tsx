@@ -18,7 +18,7 @@ export default function Projects({ asPage }: AsPage) {
         full={asPage}
         list={PROJECTS}
         render={({ name, description, techs, banner }, i) => (
-          <div key={i} className="[&:not(:last-child)]:pb-10">
+          <div key={i} className="project-item not-last-of-type:pb-10">
             <h2 className="mb-4 text-2xl font-bold text-(--chart-4)">{name}</h2>
             <p className="mb-4 text-(--ring)">{description}</p>
             <div className="mb-4 flex gap-3 text-2xl">
