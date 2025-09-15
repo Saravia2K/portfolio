@@ -1,8 +1,6 @@
 import type { WithContext, Person } from "schema-dts";
 import Script from "next/script";
 
-import EXPERIENCE from "@/assets/json/experience";
-
 export default function JSONLD() {
   const LdJSON: WithContext<Person> = {
     "@context": "https://schema.org",
