@@ -8,17 +8,12 @@ export default function JSONLD() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Diego Saravia",
-    hasOccupation: EXPERIENCE.map((e) => ({
+    hasOccupation: {
       "@type": "Role",
       "@id": new Date().getDate().toString(),
-      roleName: e.jobTitle,
-      startDate: `${e.dates.from}`,
-      endDate: e.current ? undefined : `${e.dates.to}`,
-    })),
-    worksFor: EXPERIENCE.filter((e) => e.current).map((e) => ({
-      "@type": "Organization",
-      name: e.company,
-    })),
+      roleName: "Senior Frontend Developer",
+      startDate: "2024-03-01",
+    },
   };
 
   return (
