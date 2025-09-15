@@ -4,6 +4,7 @@ import Techs from "./components/Techs";
 import Experience from "@/components/sections/experience";
 import Education from "@/components/sections/education";
 import Projects from "@/components/sections/projects";
+import Contact from "@/components/sections/contact";
 
 export default function Page() {
   const yearsOfExperiencie = new Date().getFullYear() - 2017;
@@ -27,6 +28,7 @@ export default function Page() {
       <Education />
       <Experience />
       <Projects />
+      <Contact />
     </>
   );
 }

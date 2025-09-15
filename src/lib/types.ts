@@ -35,3 +35,7 @@ export type Project = {
   techs: Tech[];
   banner: StaticImageData;
 };
+
+export type AsPage<T = {}> = {
+  asPage?: boolean;
+} & T;

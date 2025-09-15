@@ -5,10 +5,11 @@ import Timeline from "@/components/common/timeline";
 import TimelineItem from "@/components/common/timeline/item";
 import PageSection from "@/components/common/page-section";
 import IncompleteList from "@/components/common/incomplete-list";
+import type { AsPage } from "@/lib/types";
 
 import EXPERIENCE from "@/assets/json/experience";
 
-export default function Experience({ asPage }: ExperienceProps) {
+export default function Experience({ asPage }: AsPage) {
   return (
     <PageSection asPage={asPage}>
       <SectionTitle>Experiencia</SectionTitle>
@@ -27,7 +28,3 @@ export default function Experience({ asPage }: ExperienceProps) {
     </PageSection>
   );
 }
-
-type ExperienceProps = {
-  asPage?: boolean;
-};

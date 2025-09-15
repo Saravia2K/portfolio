@@ -5,10 +5,11 @@ import SectionTitle from "@/components/common/section-title";
 import IncompleteList from "@/components/common/incomplete-list";
 import PageSection from "@/components/common/page-section";
 import TechItem from "@/components/common/tech-item";
+import type { AsPage } from "@/lib/types";
 
 import PROJECTS from "@/assets/json/projects";
 
-export default function Projects({ asPage }: ProjectsProps) {
+export default function Projects({ asPage }: AsPage) {
   return (
     <PageSection asPage={asPage}>
       <SectionTitle>Proyectos</SectionTitle>
@@ -32,7 +33,3 @@ export default function Projects({ asPage }: ProjectsProps) {
     </PageSection>
   );
 }
-
-type ProjectsProps = {
-  asPage?: boolean;
-};
