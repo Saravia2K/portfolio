@@ -3,10 +3,10 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-import TECHS from "@/assets/json/techs";
 import SectionTitle from "@/components/common/section-title";
 import PageSection from "@/components/common/page-section";
+
+import TECHS from "@/assets/json/techs";
 
 export default function MainStack() {
   return (

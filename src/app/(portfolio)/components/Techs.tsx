@@ -10,14 +10,14 @@ import TECHS from "@/assets/json/techs";
 export default function Techs() {
   return (
     <section className="mt-10 mb-30">
-      <div className="flex gap-3 font-bold text-(--chart-2)">
+      <div className="flex gap-3 text-xl font-bold text-(--chart-2)">
         <Layers />
         <h3>Demás tecnologías</h3>
       </div>
       {Object.entries(CATEGORIES).map(([category_name, techs], i) => (
-        <div key={i} className="mt-7 grid grid-cols-[40%_1fr]">
-          <span className="text-xl capitalize">{category_name}</span>
-          <div className="flex gap-10 text-4xl">
+        <div key={i} className="mt-7 sm:grid sm:grid-cols-[40%_1fr]">
+          <span className="mb-3 block text-xl capitalize">{category_name}</span>
+          <div className="flex flex-wrap gap-7 text-4xl">
             {techs.map(({ icon: I, text }, j) => (
               <Tooltip key={j}>
                 <TooltipTrigger>
@@ -52,6 +52,7 @@ const CATEGORIES = {
   "fullstack frameworks": [TECHS.LARAVEL, TECHS.DJANGO, TECHS.DOTNET],
   UI: [TECHS.SHADCN, TECHS.TAILWINDCSS],
   librerias: [TECHS.REDUX, TECHS.RXJS, TECHS.SOCKETIO, TECHS.STYLED_COMPONENTS],
+  cloud: [TECHS.AWS],
   herramientas: [
     TECHS.DOCKER,
     TECHS.ATLASSIAN,
@@ -60,5 +61,4 @@ const CATEGORIES = {
     TECHS.TWILIO,
     TECHS.FIREBASE,
   ],
-  cloud: [TECHS.AWS],
 };
