@@ -6,12 +6,13 @@ import {
 
 import TECHS from "@/assets/json/techs";
 import SectionTitle from "@/components/common/section-title";
+import PageSection from "@/components/common/page-section";
 
 export default function MainStack() {
   return (
-    <section className="mt-30">
+    <PageSection>
       <SectionTitle>Stack principal</SectionTitle>
-      <div className="flex justify-center gap-7 text-5xl">
+      <div className="flex flex-wrap justify-center gap-7 text-5xl">
         {MAIN_STACK.map(({ icon: I, text }, i) => (
           <Tooltip key={i}>
             <TooltipTrigger>
@@ -21,7 +22,7 @@ export default function MainStack() {
           </Tooltip>
         ))}
       </div>
-    </section>
+    </PageSection>
   );
 }
 
