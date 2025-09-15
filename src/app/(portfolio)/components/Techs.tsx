@@ -9,7 +9,7 @@ import TECHS from "@/assets/json/techs";
 
 export default function Techs() {
   return (
-    <section className="mt-10 mb-30">
+    <section className="mt-10">
       <div className="flex gap-3 text-xl font-bold text-(--chart-2)">
         <Layers />
         <h3>Demás tecnologías</h3>
