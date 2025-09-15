@@ -3,6 +3,7 @@ import MainStack from "./components/MainStack";
 import Techs from "./components/Techs";
 import Experience from "@/components/sections/experience";
 import Education from "@/components/sections/education";
+import Projects from "@/components/sections/projects";
 
 export default function Page() {
   const yearsOfExperiencie = new Date().getFullYear() - 2017;
@@ -25,6 +26,7 @@ export default function Page() {
       <Techs />
       <Education />
       <Experience />
+      <Projects />
     </>
   );
 }

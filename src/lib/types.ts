@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { JSX, SVGProps } from "react";
 
 export type Tech = {
@@ -26,4 +27,11 @@ export type EducationItem = {
     to: number;
   };
   finished: boolean;
+};
+
+export type Project = {
+  name: string;
+  description: string;
+  techs: Tech[];
+  banner: StaticImageData;
 };
