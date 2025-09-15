@@ -7,7 +7,7 @@ export default function PortfolioLayout({ children }: PropsWithChildren) {
       <aside className="sticky top-40 h-fit self-start">
         <ProfileCard />
       </aside>
-      <main className="z-10">{children}</main>
+      <main className="z-10 w-full">{children}</main>
     </section>
   );
 }
