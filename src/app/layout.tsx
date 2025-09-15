@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${onestFont.className} relative min-h-dvh w-screen max-w-screen min-w-screen bg-black pt-40`}
+        className={`${onestFont.className} relative flex min-h-dvh w-screen max-w-screen min-w-screen flex-col items-center justify-center bg-black pt-40`}
       >
         <Background>
           {children}

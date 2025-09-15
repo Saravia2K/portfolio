@@ -3,11 +3,11 @@ import ProfileCard from "./components/ProfileCard";
 
 export default function PortfolioLayout({ children }: PropsWithChildren) {
   return (
-    <section className="m-auto flex min-h-screen w-[60%] gap-20 text-white">
-      <aside className="sticky top-40 h-fit self-start">
+    <section className="z-10 min-h-screen w-[90%] text-wrap text-white sm:w-[80%] xl:grid xl:w-[70%] xl:grid-cols-[auto_1fr] xl:gap-20">
+      <aside className="m-auto mb-10 w-fit xl:sticky xl:top-40 xl:m-0 xl:h-fit xl:self-start">
         <ProfileCard />
       </aside>
-      <main className="z-10 w-full">{children}</main>
+      <main className="z-10 w-full p-5 lg:p-0">{children}</main>
     </section>
   );
 }

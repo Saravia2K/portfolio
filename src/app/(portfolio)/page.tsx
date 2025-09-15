@@ -10,10 +10,10 @@ export default function Page() {
   const yearsOfExperiencie = new Date().getFullYear() - 2017;
   return (
     <>
-      <h1 className="text-7xl font-bold uppercase">
+      <h1 className="text-center text-5xl font-bold uppercase sm:text-6xl lg:text-start xl:text-7xl">
         Ingeniero de <span className="text-(--chart-4)">Software</span>
       </h1>
-      <h2 className="mt-4 text-[1.25rem]">
+      <h2 className="mt-4 text-justify text-[1.25rem] xl:text-start">
         Apacionado por la construcción de excelentes apliaciones web intuitivas
         con experiencia de usuario profesional.
       </h2>
