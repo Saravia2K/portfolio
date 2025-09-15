@@ -5,6 +5,7 @@ import Background from "./components/Background";
 
 import "./globals.css";
 import "moment/locale/es";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Diego Saravia",
@@ -30,7 +31,10 @@ export default function RootLayout({
       <body
         className={`${onestFont.className} relative min-h-dvh w-screen max-w-screen min-w-screen bg-black pt-40`}
       >
-        <Background>{children}</Background>
+        <Background>
+          {children}
+          <Footer />
+        </Background>
       </body>
     </html>
   );
