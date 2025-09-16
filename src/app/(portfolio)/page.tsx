@@ -14,7 +14,7 @@ export default function Page() {
         Ingeniero de <span className="text-(--chart-4)">Software</span>
       </h1>
       <h2 className="mt-4 text-justify text-[1rem] sm:text-[1.25rem] xl:text-start">
-        Apacionado por la construcción de excelentes apliaciones web intuitivas
+        Apasionado por la construcción de excelentes apliaciones web intuitivas
         con experiencia de usuario profesional.
       </h2>
       <div className="mt-5 flex items-center gap-4">
