@@ -2,6 +2,7 @@ import { Project } from "@/lib/types";
 
 import globalVillageBanner from "@/assets/images/projects/global_village.webp";
 import sistecBanner from "@/assets/images/projects/sistec.webp";
+import universidadesyprofesionesBanner from "@/assets/images/projects/universidadesyprofesiones.webp";
 import animalHostelBanner from "@/assets/images/projects/animal-hostel.webp";
 import weddingInvitationBanner from "@/assets/images/projects/wedding_invitation.webp";
 import TECHS from "./techs";
@@ -27,6 +28,13 @@ const PROJECTS: Project[] = [
       TECHS.MATERIALUI,
     ],
     banner: sistecBanner,
+  },
+  {
+    name: "Universidades y Profesiones",
+    description:
+      "Página web hecha para una empresa de estadísticas de colegios en Colombia, con el propósito de incursionar en el mercado de las universidades, vender test de orientación vocacional y proporcionar información útil para aquellos que están a punto de entrar a la universidad y no saben qué carrera elegir y en qué universidad.",
+    techs: [TECHS.LARAVEL, TECHS.MYSQL, TECHS.REACT, TECHS.FIREBASE],
+    banner: universidadesyprofesionesBanner,
   },
   {
     name: "Animal Hostel",
