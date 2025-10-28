@@ -19,9 +19,11 @@ import Nodejs from "@/components/icons/techs/nodejs";
 import PostgreSQL from "@/components/icons/techs/postgresql";
 import Postman from "@/components/icons/techs/postman";
 import React from "@/components/icons/techs/react";
+import { ReactRouter } from "@/components/icons/techs/react-router";
 import Redis from "@/components/icons/techs/redis";
 import Redux from "@/components/icons/techs/redux";
 import RxJS from "@/components/icons/techs/rxjs";
+import { Sass } from "@/components/icons/techs/sass";
 import shadcnui from "@/components/icons/techs/shadcn";
 import Socketio from "@/components/icons/techs/socket.io";
 import MicrosoftSQLServer from "@/components/icons/techs/sql_server";
@@ -33,6 +35,7 @@ import TailwindCSS from "@/components/icons/techs/tailwind_css";
 import TansStackQuery from "@/components/icons/techs/tanstack_query";
 import Twilio from "@/components/icons/techs/twilio";
 import WordPress from "@/components/icons/techs/wordpress";
+import { text } from "stream/consumers";
 
 const TECHS = {
   REACT: { icon: React, text: "React" },
@@ -70,5 +73,7 @@ const TECHS = {
   FIREBASE: { icon: Firebase, text: "Firebase" },
   AWS: { icon: AWS, text: "AWS" },
   DOTNET: { icon: DotNet, text: ".Net" },
+  REACT_ROUTER: { icon: ReactRouter, text: "React Router Framework" },
+  SASS: { icon: Sass, text: "Sass" },
 };
 export default TECHS;

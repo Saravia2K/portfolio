@@ -34,7 +34,7 @@ export default function Techs() {
 }
 
 const CATEGORIES = {
-  frontend: [TECHS.ANGULAR, TECHS.ASTRO],
+  frontend: [TECHS.ANGULAR, TECHS.ASTRO, TECHS.REACT_ROUTER],
   backend: [
     TECHS.EXPRESSJS,
     TECHS.FASTAPI,
@@ -50,7 +50,7 @@ const CATEGORIES = {
     TECHS.SQLITE,
   ],
   "fullstack frameworks": [TECHS.LARAVEL, TECHS.DJANGO, TECHS.DOTNET],
-  UI: [TECHS.SHADCN, TECHS.TAILWINDCSS],
+  UI: [TECHS.SHADCN, TECHS.TAILWINDCSS, TECHS.SASS],
   librerias: [TECHS.REDUX, TECHS.RXJS, TECHS.SOCKETIO, TECHS.STYLED_COMPONENTS],
   cloud: [TECHS.AWS],
   herramientas: [
