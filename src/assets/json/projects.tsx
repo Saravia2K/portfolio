@@ -1,6 +1,7 @@
 import { Project } from "@/lib/types";
 
 import globalVillageBanner from "@/assets/images/projects/global_village.webp";
+import madBanner from "@/assets/images/projects/mad_udb_2025.webp";
 import sistecBanner from "@/assets/images/projects/sistec.webp";
 import universidadesyprofesionesBanner from "@/assets/images/projects/universidadesyprofesiones.webp";
 import animalHostelBanner from "@/assets/images/projects/animal-hostel.webp";
@@ -8,13 +9,6 @@ import weddingInvitationBanner from "@/assets/images/projects/wedding_invitation
 import TECHS from "./techs";
 
 const PROJECTS: Project[] = [
-  {
-    name: "Global Village",
-    description:
-      "Sitio web con panel de administrador para promocionar clases de idiomas online de una empresa local.",
-    techs: [TECHS.REACT, TECHS.NEXTJS, TECHS.POSTGRESQL, TECHS.DOCKER],
-    banner: globalVillageBanner,
-  },
   {
     name: "SISTEC",
     description:
@@ -30,11 +24,34 @@ const PROJECTS: Project[] = [
     banner: sistecBanner,
   },
   {
+    name: "MAD 2025",
+    description:
+      "Sitio web oficial para el evento de MAD 2025 de los estudiantes de último ciclo de la carrera de Diseño Gráfico, donde se muestran los perfiles de todos los profesionales, sus trabajos y su información de contacto, además de información de los patrocinadores de este evento",
+    techs: [TECHS.REACT, TECHS.REACT_ROUTER, TECHS.TAILWINDCSS, TECHS.SUPABASE],
+    banner: madBanner,
+    web: "https://madudb2025.com",
+  },
+  {
+    name: "Global Village",
+    description:
+      "Sitio web con panel de administrador para promocionar clases de idiomas online de una empresa local.",
+    techs: [
+      TECHS.REACT,
+      TECHS.NEXTJS,
+      TECHS.POSTGRESQL,
+      TECHS.DOCKER,
+      TECHS.SASS,
+    ],
+    banner: globalVillageBanner,
+    web: "https://globalvillagesv.com",
+  },
+  {
     name: "Universidades y Profesiones",
     description:
       "Página web hecha para una empresa de estadísticas de colegios en Colombia, con el propósito de incursionar en el mercado de las universidades, vender test de orientación vocacional y proporcionar información útil para aquellos que están a punto de entrar a la universidad y no saben qué carrera elegir y en qué universidad.",
     techs: [TECHS.LARAVEL, TECHS.MYSQL, TECHS.REACT, TECHS.FIREBASE],
     banner: universidadesyprofesionesBanner,
+    web: "https://universidadesyprofesiones.com",
   },
   {
     name: "Animal Hostel",
@@ -46,6 +63,7 @@ const PROJECTS: Project[] = [
       TECHS.POSTGRESQL,
       TECHS.DOCKER,
       TECHS.MATERIALUI,
+      TECHS.SASS,
     ],
     banner: animalHostelBanner,
   },
@@ -59,6 +77,7 @@ const PROJECTS: Project[] = [
       TECHS.POSTGRESQL,
       TECHS.DOCKER,
       TECHS.MATERIALUI,
+      TECHS.SASS,
     ],
     banner: weddingInvitationBanner,
   },

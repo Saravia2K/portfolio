@@ -17,10 +17,19 @@ export default function Projects({ asPage }: AsPage) {
         href="/proyectos"
         full={asPage}
         list={PROJECTS}
-        render={({ name, description, techs, banner }, i) => (
+        render={({ name, description, techs, banner, web }, i) => (
           <div key={i} className="project-item not-last-of-type:pb-10">
             <h2 className="mb-4 text-2xl font-bold text-(--chart-4)">{name}</h2>
             <p className="mb-4 text-(--ring)">{description}</p>
+            {web && (
+              <a
+                href={web}
+                target="_blank"
+                className="mb-4 inline-block border-b-[1px] border-b-blue-400 !text-blue-400"
+              >
+                Click para ver el sitio
+              </a>
+            )}
             <div className="mb-4 flex gap-3 text-2xl">
               {techs.map((tech, i) => (
                 <TechItem key={i} tech={tech} />

@@ -34,6 +34,7 @@ export type Project = {
   description: string;
   techs: Tech[];
   banner: StaticImageData;
+  web?: string;
 };
 
 export type AsPage<T = object> = {
