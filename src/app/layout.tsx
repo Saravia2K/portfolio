@@ -3,6 +3,7 @@ import { Onest } from "next/font/google";
 import moment from "moment";
 import Background from "./components/Background";
 import Footer from "./components/Footer";
+import SonnerProvider from "@/components/providers/SonnetProvider";
 
 import "./globals.css";
 import "moment/locale/es";
@@ -40,10 +41,12 @@ export default function RootLayout({
       <body
         className={`${onestFont.className} relative flex min-h-dvh w-screen max-w-screen min-w-screen flex-col items-center justify-center bg-black pt-40`}
       >
-        <Background>
-          {children}
-          <Footer />
-        </Background>
+        <SonnerProvider>
+          <Background>
+            {children}
+            <Footer />
+          </Background>
+        </SonnerProvider>
       </body>
     </html>
   );
