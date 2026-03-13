@@ -1,0 +1,41 @@
+import type { JSX, SVGProps } from "react";
+
+export type Tech = {
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  text: string;
+};
+
+export type ExperienceItem = {
+  dates: {
+    from: string | Date;
+    to: string | Date;
+  };
+  jobTitle: string;
+  company: string;
+  location: string;
+  current?: boolean;
+  techs: Tech[];
+};
+
+export type EducationItem = {
+  institution: string;
+  career: string;
+  location: string;
+  years: {
+    from: number;
+    to: number;
+  };
+  finished: boolean;
+};
+
+export type Project = {
+  name: string;
+  description: string;
+  techs: Tech[];
+  banner: string;
+  web?: string;
+};
+
+export type AsPage<T = object> = {
+  asPage?: boolean;
+} & T;
