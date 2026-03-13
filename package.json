@@ -27,6 +27,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.545.0",
+    "moment": "^2.30.1",
     "motion": "^12.36.0",
     "nitro": "npm:nitro-nightly@latest",
     "react": "^19.2.0",
