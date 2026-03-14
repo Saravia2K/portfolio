@@ -13,6 +13,7 @@ import { Route as PortfolioRouteRouteImport } from './routes/_portfolio/route'
 import { Route as PortfolioIndexRouteImport } from './routes/_portfolio/index'
 import { Route as PortfolioContactarRouteImport } from './routes/_portfolio/contactar'
 import { Route as PortfolioWith_back_buttonRouteRouteImport } from './routes/_portfolio/_with_back_button/route'
+import { Route as PortfolioWith_back_buttonProyectosRouteImport } from './routes/_portfolio/_with_back_button/proyectos'
 import { Route as PortfolioWith_back_buttonExperienciaRouteImport } from './routes/_portfolio/_with_back_button/experiencia'
 
 const PortfolioRouteRoute = PortfolioRouteRouteImport.update({
@@ -34,6 +35,12 @@ const PortfolioWith_back_buttonRouteRoute =
     id: '/_with_back_button',
     getParentRoute: () => PortfolioRouteRoute,
   } as any)
+const PortfolioWith_back_buttonProyectosRoute =
+  PortfolioWith_back_buttonProyectosRouteImport.update({
+    id: '/proyectos',
+    path: '/proyectos',
+    getParentRoute: () => PortfolioWith_back_buttonRouteRoute,
+  } as any)
 const PortfolioWith_back_buttonExperienciaRoute =
   PortfolioWith_back_buttonExperienciaRouteImport.update({
     id: '/experiencia',
@@ -45,11 +52,13 @@ export interface FileRoutesByFullPath {
   '/': typeof PortfolioIndexRoute
   '/contactar': typeof PortfolioContactarRoute
   '/experiencia': typeof PortfolioWith_back_buttonExperienciaRoute
+  '/proyectos': typeof PortfolioWith_back_buttonProyectosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof PortfolioIndexRoute
   '/contactar': typeof PortfolioContactarRoute
   '/experiencia': typeof PortfolioWith_back_buttonExperienciaRoute
+  '/proyectos': typeof PortfolioWith_back_buttonProyectosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -58,12 +67,13 @@ export interface FileRoutesById {
   '/_portfolio/contactar': typeof PortfolioContactarRoute
   '/_portfolio/': typeof PortfolioIndexRoute
   '/_portfolio/_with_back_button/experiencia': typeof PortfolioWith_back_buttonExperienciaRoute
+  '/_portfolio/_with_back_button/proyectos': typeof PortfolioWith_back_buttonProyectosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contactar' | '/experiencia'
+  fullPaths: '/' | '/contactar' | '/experiencia' | '/proyectos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contactar' | '/experiencia'
+  to: '/' | '/contactar' | '/experiencia' | '/proyectos'
   id:
     | '__root__'
     | '/_portfolio'
@@ -71,6 +81,7 @@ export interface FileRouteTypes {
     | '/_portfolio/contactar'
     | '/_portfolio/'
     | '/_portfolio/_with_back_button/experiencia'
+    | '/_portfolio/_with_back_button/proyectos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -107,6 +118,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioWith_back_buttonRouteRouteImport
       parentRoute: typeof PortfolioRouteRoute
     }
+    '/_portfolio/_with_back_button/proyectos': {
+      id: '/_portfolio/_with_back_button/proyectos'
+      path: '/proyectos'
+      fullPath: '/proyectos'
+      preLoaderRoute: typeof PortfolioWith_back_buttonProyectosRouteImport
+      parentRoute: typeof PortfolioWith_back_buttonRouteRoute
+    }
     '/_portfolio/_with_back_button/experiencia': {
       id: '/_portfolio/_with_back_button/experiencia'
       path: '/experiencia'
@@ -119,12 +137,15 @@ declare module '@tanstack/react-router' {
 
 interface PortfolioWith_back_buttonRouteRouteChildren {
   PortfolioWith_back_buttonExperienciaRoute: typeof PortfolioWith_back_buttonExperienciaRoute
+  PortfolioWith_back_buttonProyectosRoute: typeof PortfolioWith_back_buttonProyectosRoute
 }
 
 const PortfolioWith_back_buttonRouteRouteChildren: PortfolioWith_back_buttonRouteRouteChildren =
   {
     PortfolioWith_back_buttonExperienciaRoute:
       PortfolioWith_back_buttonExperienciaRoute,
+    PortfolioWith_back_buttonProyectosRoute:
+      PortfolioWith_back_buttonProyectosRoute,
   }
 
 const PortfolioWith_back_buttonRouteRouteWithChildren =
