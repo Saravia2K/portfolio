@@ -11,10 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortfolioRouteRouteImport } from './routes/_portfolio/route'
 import { Route as PortfolioIndexRouteImport } from './routes/_portfolio/index'
-import { Route as PortfolioContactarRouteImport } from './routes/_portfolio/contactar'
 import { Route as PortfolioWith_back_buttonRouteRouteImport } from './routes/_portfolio/_with_back_button/route'
 import { Route as PortfolioWith_back_buttonProyectosRouteImport } from './routes/_portfolio/_with_back_button/proyectos'
 import { Route as PortfolioWith_back_buttonExperienciaRouteImport } from './routes/_portfolio/_with_back_button/experiencia'
+import { Route as PortfolioWith_back_buttonContactarRouteImport } from './routes/_portfolio/_with_back_button/contactar'
 
 const PortfolioRouteRoute = PortfolioRouteRouteImport.update({
   id: '/_portfolio',
@@ -23,11 +23,6 @@ const PortfolioRouteRoute = PortfolioRouteRouteImport.update({
 const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => PortfolioRouteRoute,
-} as any)
-const PortfolioContactarRoute = PortfolioContactarRouteImport.update({
-  id: '/contactar',
-  path: '/contactar',
   getParentRoute: () => PortfolioRouteRoute,
 } as any)
 const PortfolioWith_back_buttonRouteRoute =
@@ -47,16 +42,22 @@ const PortfolioWith_back_buttonExperienciaRoute =
     path: '/experiencia',
     getParentRoute: () => PortfolioWith_back_buttonRouteRoute,
   } as any)
+const PortfolioWith_back_buttonContactarRoute =
+  PortfolioWith_back_buttonContactarRouteImport.update({
+    id: '/contactar',
+    path: '/contactar',
+    getParentRoute: () => PortfolioWith_back_buttonRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof PortfolioIndexRoute
-  '/contactar': typeof PortfolioContactarRoute
+  '/contactar': typeof PortfolioWith_back_buttonContactarRoute
   '/experiencia': typeof PortfolioWith_back_buttonExperienciaRoute
   '/proyectos': typeof PortfolioWith_back_buttonProyectosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof PortfolioIndexRoute
-  '/contactar': typeof PortfolioContactarRoute
+  '/contactar': typeof PortfolioWith_back_buttonContactarRoute
   '/experiencia': typeof PortfolioWith_back_buttonExperienciaRoute
   '/proyectos': typeof PortfolioWith_back_buttonProyectosRoute
 }
@@ -64,8 +65,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_portfolio': typeof PortfolioRouteRouteWithChildren
   '/_portfolio/_with_back_button': typeof PortfolioWith_back_buttonRouteRouteWithChildren
-  '/_portfolio/contactar': typeof PortfolioContactarRoute
   '/_portfolio/': typeof PortfolioIndexRoute
+  '/_portfolio/_with_back_button/contactar': typeof PortfolioWith_back_buttonContactarRoute
   '/_portfolio/_with_back_button/experiencia': typeof PortfolioWith_back_buttonExperienciaRoute
   '/_portfolio/_with_back_button/proyectos': typeof PortfolioWith_back_buttonProyectosRoute
 }
@@ -78,8 +79,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/_portfolio'
     | '/_portfolio/_with_back_button'
-    | '/_portfolio/contactar'
     | '/_portfolio/'
+    | '/_portfolio/_with_back_button/contactar'
     | '/_portfolio/_with_back_button/experiencia'
     | '/_portfolio/_with_back_button/proyectos'
   fileRoutesById: FileRoutesById
@@ -104,13 +105,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof PortfolioRouteRoute
     }
-    '/_portfolio/contactar': {
-      id: '/_portfolio/contactar'
-      path: '/contactar'
-      fullPath: '/contactar'
-      preLoaderRoute: typeof PortfolioContactarRouteImport
-      parentRoute: typeof PortfolioRouteRoute
-    }
     '/_portfolio/_with_back_button': {
       id: '/_portfolio/_with_back_button'
       path: ''
@@ -132,16 +126,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioWith_back_buttonExperienciaRouteImport
       parentRoute: typeof PortfolioWith_back_buttonRouteRoute
     }
+    '/_portfolio/_with_back_button/contactar': {
+      id: '/_portfolio/_with_back_button/contactar'
+      path: '/contactar'
+      fullPath: '/contactar'
+      preLoaderRoute: typeof PortfolioWith_back_buttonContactarRouteImport
+      parentRoute: typeof PortfolioWith_back_buttonRouteRoute
+    }
   }
 }
 
 interface PortfolioWith_back_buttonRouteRouteChildren {
+  PortfolioWith_back_buttonContactarRoute: typeof PortfolioWith_back_buttonContactarRoute
   PortfolioWith_back_buttonExperienciaRoute: typeof PortfolioWith_back_buttonExperienciaRoute
   PortfolioWith_back_buttonProyectosRoute: typeof PortfolioWith_back_buttonProyectosRoute
 }
 
 const PortfolioWith_back_buttonRouteRouteChildren: PortfolioWith_back_buttonRouteRouteChildren =
   {
+    PortfolioWith_back_buttonContactarRoute:
+      PortfolioWith_back_buttonContactarRoute,
     PortfolioWith_back_buttonExperienciaRoute:
       PortfolioWith_back_buttonExperienciaRoute,
     PortfolioWith_back_buttonProyectosRoute:
@@ -155,14 +159,12 @@ const PortfolioWith_back_buttonRouteRouteWithChildren =
 
 interface PortfolioRouteRouteChildren {
   PortfolioWith_back_buttonRouteRoute: typeof PortfolioWith_back_buttonRouteRouteWithChildren
-  PortfolioContactarRoute: typeof PortfolioContactarRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
 
 const PortfolioRouteRouteChildren: PortfolioRouteRouteChildren = {
   PortfolioWith_back_buttonRouteRoute:
     PortfolioWith_back_buttonRouteRouteWithChildren,
-  PortfolioContactarRoute: PortfolioContactarRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
 }
 
