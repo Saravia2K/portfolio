@@ -1,12 +1,12 @@
-import { Project } from "@/lib/types";
+import type { Project } from "@/lib/types"
 
-import globalVillageBanner from "@/assets/images/projects/global_village.webp";
-import madBanner from "@/assets/images/projects/mad_udb_2025.webp";
-import sistecBanner from "@/assets/images/projects/sistec.webp";
-import universidadesyprofesionesBanner from "@/assets/images/projects/universidadesyprofesiones.webp";
-import animalHostelBanner from "@/assets/images/projects/animal-hostel.webp";
-import weddingInvitationBanner from "@/assets/images/projects/wedding_invitation.webp";
-import TECHS from "./techs";
+import globalVillageBanner from "@/assets/images/projects/global_village.webp"
+import madBanner from "@/assets/images/projects/mad_udb_2025.webp"
+import sistecBanner from "@/assets/images/projects/sistec.webp"
+import universidadesyprofesionesBanner from "@/assets/images/projects/universidadesyprofesiones.webp"
+import animalHostelBanner from "@/assets/images/projects/animal-hostel.webp"
+import weddingInvitationBanner from "@/assets/images/projects/wedding_invitation.webp"
+import TECHS from "./techs"
 
 const PROJECTS: Project[] = [
   {
@@ -81,6 +81,6 @@ const PROJECTS: Project[] = [
     ],
     banner: weddingInvitationBanner,
   },
-];
+]
 
-export default PROJECTS;
+export default PROJECTS

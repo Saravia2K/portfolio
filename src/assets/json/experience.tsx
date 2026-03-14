@@ -1,6 +1,6 @@
-import { ExperienceItem } from "@/lib/types";
-import TECHS from "./techs";
-import List from "@/components/common/list";
+import type { ExperienceItem } from "@/lib/types"
+import TECHS from "./techs"
+import List from "@/components/common/list"
 
 const EXPERIENCE: Array<ExperienceItem & { description: React.ReactNode }> = [
   {
@@ -100,6 +100,6 @@ const EXPERIENCE: Array<ExperienceItem & { description: React.ReactNode }> = [
       />
     ),
   },
-];
+]
 
-export default EXPERIENCE;
+export default EXPERIENCE
