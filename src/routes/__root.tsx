@@ -20,7 +20,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Diego Saravia',
+        title: 'Diego Saravia | Portfolio',
       },
       {
         name: 'description',
