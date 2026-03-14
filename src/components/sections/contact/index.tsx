@@ -11,16 +11,12 @@ import Textarea from "@/components/forms/textarea";
 import { Button } from "@/components/ui/button";
 import FormError from "@/components/forms/error";
 import { Spinner } from "@/components/ui/spinner";
-import type { AsPage } from "@/lib/types";
 
-const Schema = z.object({
-  name: z.string().min(1, "El nombre es requerido"),
-  email: z.email("Ingrese un correo electrónico válido"),
-  description: z
-    .string()
-    .min(1, "Por favor, escribe lo más detallado posible tu idea para poder ayudarte"),
-});
-type FormValues = z.infer<typeof Schema>;
+import type { AsPage } from "@/lib/types";
+import { EmailSchema } from "@/utils/email.utils";
+import { sendEmail } from "@/utils/email.function";
+
+type FormValues = z.infer<typeof EmailSchema>;
 
 export default function Contact({ asPage }: AsPage) {
   const {
@@ -28,7 +24,7 @@ export default function Contact({ asPage }: AsPage) {
     handleSubmit,
     formState: { errors, isSubmitting, isValidating },
   } = useForm<FormValues>({
-    resolver: zodResolver(Schema),
+    resolver: zodResolver(EmailSchema),
     reValidateMode: "onChange",
     defaultValues: {
       name: "",
@@ -39,14 +35,8 @@ export default function Contact({ asPage }: AsPage) {
 
   const handleFormSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      const fetchResponse = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (!fetchResponse.ok) throw new Error("Error al enviar el correo");
+      const emailSent = await sendEmail({ data });
+      if (!emailSent) throw new Error("Error al enviar el correo");
 
       toast.success(
         "Tu mensaje fue enviado con éxito. Me comunicaré contigo en la brevedad.",
