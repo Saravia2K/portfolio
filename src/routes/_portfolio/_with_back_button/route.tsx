@@ -11,7 +11,7 @@ function RouteComponent() {
 
   return (
     <div className="h-full w-full">
-      <Button onClick={() => router.history.back()}>
+      <Button onClick={() => router.navigate({ to: "/" })}>
         <ArrowLeft />
       </Button>
       <Outlet />
