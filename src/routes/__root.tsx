@@ -1,61 +1,62 @@
-import type { PropsWithChildren } from 'react'
-import moment from 'moment'
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
+import type { PropsWithChildren } from "react";
+import moment from "moment";
+import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { TanStackDevtools } from "@tanstack/react-devtools";
 
-import SonnerProvider from '#/components/providers/SonnetProvider'
+import SonnerProvider from "#/components/providers/SonnetProvider";
 
-import globalStyles from './global.css?url'
-import meImg from '@/assets/images/profile_pic.png'
+import globalStyles from "./global.css?url";
+import meImg from "@/assets/images/profile_pic.png";
+import { getLocale } from "../paraglide/runtime.js";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
-        charSet: 'utf-8',
+        charSet: "utf-8",
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
       {
-        title: 'Diego Saravia | Portfolio',
+        title: "Diego Saravia | Portfolio",
       },
       {
-        name: 'description',
-        content: 'Portfolio de Diego Saravia',
+        name: "description",
+        content: "Portfolio de Diego Saravia",
       },
       {
-        name: 'og:description',
+        name: "og:description",
         content:
-          'Mira el camino que he recorrido en mi carrera profesional y como puedo ayudarte a cumplir los objetivos digitales que tienes para tu negocio',
+          "Mira el camino que he recorrido en mi carrera profesional y como puedo ayudarte a cumplir los objetivos digitales que tienes para tu negocio",
       },
-      { name: 'og:image', content: meImg },
-      { name: 'og:image:type', content: 'image/png' },
-      { name: 'og:image:width', content: '1200' },
-      { name: 'og:image:height', content: '630' },
-      { name: 'og:image:alt', content: 'Diego Saravia' },
-      { name: 'og:title', content: 'Diego Saravia' },
-      { name: 'og:type', content: 'website' },
-      { name: 'og:url', content: 'https://diegosaravia.com' },
-      { name: 'og:site_name', content: 'Diego Saravia' },
+      { name: "og:image", content: meImg },
+      { name: "og:image:type", content: "image/png" },
+      { name: "og:image:width", content: "1200" },
+      { name: "og:image:height", content: "630" },
+      { name: "og:image:alt", content: "Diego Saravia" },
+      { name: "og:title", content: "Diego Saravia" },
+      { name: "og:type", content: "website" },
+      { name: "og:url", content: "https://diegosaravia.com" },
+      { name: "og:site_name", content: "Diego Saravia" },
     ],
     links: [
       {
-        rel: 'stylesheet',
+        rel: "stylesheet",
         href: globalStyles,
       },
     ],
   }),
   shellComponent: RootDocument,
-})
-
-moment.locale('es')
+});
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const locale = getLocale();
+  moment.locale(locale);
   return (
-    <html lang="es">
+    <html lang={locale}>
       <head>
         <HeadContent />
       </head>
@@ -66,11 +67,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <Footer />
             <TanStackDevtools
               config={{
-                position: 'bottom-right',
+                position: "bottom-right",
               }}
               plugins={[
                 {
-                  name: 'Tanstack Router',
+                  name: "Tanstack Router",
                   render: <TanStackRouterDevtoolsPanel />,
                 },
               ]}
@@ -80,7 +81,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </SonnerProvider>
       </body>
     </html>
-  )
+  );
 }
 
 function Background({ children }: PropsWithChildren) {
@@ -90,7 +91,7 @@ function Background({ children }: PropsWithChildren) {
       <div className="absolute top-[-10%] right-0 left-0 h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]"></div>
       {children}
     </>
-  )
+  );
 }
 
 function Footer() {
@@ -102,5 +103,5 @@ function Footer() {
         </span>
       </div>
     </footer>
-  )
+  );
 }
