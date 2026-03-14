@@ -22,6 +22,7 @@ export default function Contact({ asPage }: AsPage) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting, isValidating },
   } = useForm<FormValues>({
     resolver: zodResolver(EmailSchema),
@@ -41,6 +42,7 @@ export default function Contact({ asPage }: AsPage) {
       toast.success(
         "Tu mensaje fue enviado con éxito. Me comunicaré contigo en la brevedad.",
       );
+      reset();
     } catch (error) {
       toast.error(
         "Hubo un error al intentar enviar el formulario. Por favor, inténtalo de nuevo más tarde.",
