@@ -5,5 +5,10 @@
   "description_quote": "I turn ideas into software that works.",
   "description_part_one": "For over {yearsOfExperience} years, I've been building digital products from scratch —leading architecture, writing clean code, and solving real problems. I thrive in the space where creativity meets execution, and I love working with teams who care about quality as much as I do.",
   "description_part_two": "Whether it's launching an MVP, scaling a platform, or untangling complex challenges, I bring curiosity, discipline, and a builder's mindset.",
-  "yoe_quote": "years of experience developing professional software"
+  "yoe_quote": "years of experience developing professional software",
+  "main_stack_title": "Main stack",
+  "other_techs_title": "Other technologies",
+  "databases": "Databases",
+  "libraries": "Libraries",
+  "tools": "Tools"
 }

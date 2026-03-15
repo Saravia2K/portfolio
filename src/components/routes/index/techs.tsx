@@ -1,18 +1,19 @@
-import { Layers } from 'lucide-react'
+import { Layers } from "lucide-react";
+import { m } from "@/paraglide/messages";
 import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from '@/components/ui/tooltip'
+} from "@/components/ui/tooltip";
 
-import TECHS from '@/assets/json/techs'
+import TECHS from "@/assets/json/techs";
 
 export default function Techs() {
   return (
     <section className="mt-10">
       <div className="text-chart-2 flex gap-3 text-xl font-bold">
         <Layers />
-        <h3>Demás tecnologías</h3>
+        <h3>{m.other_techs_title()}</h3>
       </div>
       {Object.entries(CATEGORIES).map(([category_name, techs], i) => (
         <div key={i} className="mt-7 sm:grid sm:grid-cols-[40%_1fr]">
@@ -30,7 +31,7 @@ export default function Techs() {
         </div>
       ))}
     </section>
-  )
+  );
 }
 
 const CATEGORIES = {
@@ -42,18 +43,23 @@ const CATEGORIES = {
     TECHS.SUPABASE,
     TECHS.BETTERAUTH,
   ],
-  'bases de datos': [
+  [m.databases()]: [
     TECHS.SQLSERVER,
     TECHS.REDIS,
     TECHS.MYSQL,
     TECHS.MONGODB,
     TECHS.SQLITE,
   ],
-  'fullstack frameworks': [TECHS.LARAVEL, TECHS.DJANGO, TECHS.DOTNET],
+  "fullstack frameworks": [TECHS.LARAVEL, TECHS.DJANGO, TECHS.DOTNET],
   UI: [TECHS.SHADCN, TECHS.TAILWINDCSS, TECHS.SASS],
-  librerias: [TECHS.REDUX, TECHS.RXJS, TECHS.SOCKETIO, TECHS.STYLED_COMPONENTS],
+  [m.libraries()]: [
+    TECHS.REDUX,
+    TECHS.RXJS,
+    TECHS.SOCKETIO,
+    TECHS.STYLED_COMPONENTS,
+  ],
   cloud: [TECHS.AWS],
-  herramientas: [
+  [m.tools()]: [
     TECHS.DOCKER,
     TECHS.ATLASSIAN,
     TECHS.POSTMAN,
@@ -61,4 +67,4 @@ const CATEGORIES = {
     TECHS.TWILIO,
     TECHS.FIREBASE,
   ],
-}
+};
