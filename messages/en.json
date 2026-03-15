@@ -1,4 +1,9 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "example_message": "Hello world {username}"
+  "title_part_one": "Software",
+  "title_part_two": "Engineer",
+  "description_quote": "I turn ideas into software that works.",
+  "description_part_one": "For over {yearsOfExperience} years, I've been building digital products from scratch —leading architecture, writing clean code, and solving real problems. I thrive in the space where creativity meets execution, and I love working with teams who care about quality as much as I do.",
+  "description_part_two": "Whether it's launching an MVP, scaling a platform, or untangling complex challenges, I bring curiosity, discipline, and a builder's mindset.",
+  "yoe_quote": "years of experience developing professional software"
 }
