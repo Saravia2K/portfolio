@@ -1,5 +1,10 @@
 import type { JSX, SVGProps } from "react";
 
+export type Multilangual<T> = {
+  es: T;
+  en: T;
+};
+
 export type Tech = {
   icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
   text: string;
