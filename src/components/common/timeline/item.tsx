@@ -1,10 +1,14 @@
 import { type PropsWithChildren } from "react";
 import moment from "moment";
+import { m } from "#/paraglide/messages";
+import { getLocale } from "#/paraglide/runtime";
+
 import TechItem from "../tech-item";
 import type { ExperienceItem } from "@/lib/types";
 
-import "moment/locale/es"; // TODO: moment es deprecated
-moment.locale("es");
+const locale = getLocale();
+import(`moment/locale/${locale}`); // TODO: moment es deprecated
+moment.locale(locale);
 
 export default function TimelineItem(props: TimelineItemProps) {
   const { dates, jobTitle, company, location, current, children, techs } =
@@ -30,14 +34,14 @@ export default function TimelineItem(props: TimelineItemProps) {
         </div>
         <span className="text-end">{location}</span>
       </div>
-      <h3 className="flex justify-between text-lg font-semibold text-chart-4">
+      <h3 className="text-chart-4 flex justify-between text-lg font-semibold">
         <span>{jobTitle}</span> <span className="text-end">{company}</span>
       </h3>
       <div className="mt-4 mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
         {children}
       </div>
       <div className="flex items-center gap-2 text-xl sm:gap-4">
-        <span className="text-[1rem]">Tecnologías usadas:</span>
+        <span className="text-[1rem]">{m.used_techs()}:</span>
         {techs.map((tech, i) => (
           <TechItem key={i} tech={tech} />
         ))}

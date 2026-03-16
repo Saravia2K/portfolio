@@ -1,5 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "see_more": "See more",
   "title_part_one": "Software",
   "title_part_two": "Engineer",
   "description_quote": "I turn ideas into software that works.",
@@ -11,6 +12,7 @@
   "databases": "Databases",
   "libraries": "Libraries",
   "tools": "Tools",
+  "used_techs": "Technologies used",
   "education_title": "Education",
   "experience_title": "Experience"
 }
