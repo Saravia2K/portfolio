@@ -1,6 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "see_more": "Ver más",
+  "currently": "Actualmente",
   "title_part_one": "Ingeniero de",
   "title_part_two": "Software",
   "description_quote": "Convierto ideas en software que funciona.",

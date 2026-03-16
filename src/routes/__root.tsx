@@ -1,14 +1,19 @@
 import type { PropsWithChildren } from "react";
-import moment from "moment";
+import dayjs from "dayjs";
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
+import { getLocale } from "../paraglide/runtime.js";
 
 import SonnerProvider from "#/components/providers/SonnetProvider";
 
 import globalStyles from "./global.css?url";
 import meImg from "@/assets/images/profile_pic.png";
-import { getLocale } from "../paraglide/runtime.js";
+
+const locale = getLocale();
+import "dayjs/locale/es";
+import "dayjs/locale/en";
+dayjs.locale(locale);
 
 export const Route = createRootRoute({
   head: () => ({
@@ -53,8 +58,6 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-  const locale = getLocale();
-  moment.locale(locale);
   return (
     <html lang={locale}>
       <head>
