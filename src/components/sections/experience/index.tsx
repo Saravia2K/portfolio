@@ -1,3 +1,6 @@
+import { m } from "@/paraglide/messages";
+import { getLocale } from "@/paraglide/runtime";
+
 import SectionTitle from "@/components/common/section-title";
 import Timeline from "@/components/common/timeline";
 import TimelineItem from "@/components/common/timeline/item";
@@ -7,16 +10,18 @@ import type { AsPage } from "@/lib/types";
 
 import EXPERIENCE from "@/assets/json/experience";
 
+const locale = getLocale();
 export default function Experience({ asPage }: AsPage) {
+  const experience = EXPERIENCE[locale];
   return (
     <PageSection asPage={asPage}>
-      <SectionTitle>Experiencia</SectionTitle>
+      <SectionTitle>{m.experience_title()}</SectionTitle>
 
       <IncompleteList
         containerComponent={Timeline}
         full={asPage}
         href="/experiencia"
-        list={EXPERIENCE.slice().reverse()}
+        list={experience.slice().reverse()}
         render={({ description, ...e }, i) => (
           <TimelineItem key={i} {...e}>
             {description}
