@@ -18,5 +18,16 @@
   "experience_title": "Experience",
   "projects_title": "Projects",
   "click_to_see_website": "Click to see the website",
-  "copyright": "All rights reserved."
+  "copyright": "All rights reserved.",
+  "contact_me": "Contact me",
+  "contact": "Contact",
+  "name_label": "Name",
+  "name_placeholder": "Write your name here",
+  "email_label": "Email",
+  "email_placeholder": "Write your email address",
+  "message_label": "Tell me a bit about what I can help you with",
+  "message_placeholder": "Write your message...",
+  "sending": "Sending...",
+  "success_message": "Your message was sent successfully. I will contact you as soon as possible.",
+  "error_message": "There was an error trying to send the form. Please try again later."
 }

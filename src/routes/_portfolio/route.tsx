@@ -1,15 +1,16 @@
-import { createFileRoute, Outlet, useRouter } from '@tanstack/react-router'
+import { createFileRoute, Outlet, useRouter } from "@tanstack/react-router";
+import { m } from "#/paraglide/messages";
 
-import ProfileCard from '@/components/react-bits/profile-card'
+import ProfileCard from "@/components/react-bits/profile-card";
 
-import profilePic from '@/assets/images/profile_pic.png'
+import profilePic from "@/assets/images/profile_pic.png";
 
-export const Route = createFileRoute('/_portfolio')({
+export const Route = createFileRoute("/_portfolio")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <section className="z-10 min-h-screen w-[90%] text-wrap text-white sm:w-[80%] xl:grid xl:w-[70%] xl:grid-cols-[auto_1fr] xl:gap-20">
@@ -19,14 +20,14 @@ function RouteComponent() {
           name="Diego Saravia"
           title="Software Engineer"
           status="Online"
-          contactText="Contactar"
+          contactText={m.contact()}
           handle="Fullstack web dev"
-          onContactClick={() => router.navigate({ to: '/contactar' })}
+          onContactClick={() => router.navigate({ to: "/contactar" })}
         />
       </aside>
       <main className="z-10 w-full p-5 lg:p-0">
         <Outlet />
       </main>
     </section>
-  )
+  );
 }

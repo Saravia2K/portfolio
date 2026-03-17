@@ -18,5 +18,16 @@
   "experience_title": "Experiencia",
   "projects_title": "Proyectos",
   "click_to_see_website": "Click para ver el sitio",
-  "copyright": "Todos los derechos reservados."
+  "copyright": "Todos los derechos reservados.",
+  "contact_me": "Contáctame",
+  "contact": "Contactar",
+  "name_label": "Nombre",
+  "name_placeholder": "Escribe tu nombre aquí",
+  "email_label": "Correo electrónico",
+  "email_placeholder": "Escribe tu correo electrónico",
+  "message_label": "Cuéntame un poco en qué te puedo ayudar",
+  "message_placeholder": "Escribe tu mensaje...",
+  "sending": "Enviando...",
+  "success_message": "Tu mensaje fue enviado con éxito. Me comunicaré contigo en la brevedad.",
+  "error_message": "Hubo un error al intentar enviar el formulario. Por favor, inténtalo de nuevo más tarde."
 }
