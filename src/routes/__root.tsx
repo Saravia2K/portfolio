@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
+import { m } from "#/paraglide/messages.js";
 import { getLocale } from "../paraglide/runtime.js";
 
 import SonnerProvider from "#/components/providers/SonnetProvider";
@@ -102,7 +103,8 @@ function Footer() {
     <footer className="m-4 rounded-lg shadow-sm dark:bg-gray-900">
       <div className="mx-auto w-full max-w-7xl p-4 md:py-8">
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2025 Diego José Saravia Zaldaña. Todos los derechos reservados.
+          © {new Date().getFullYear()} Diego José Saravia Zaldaña.{" "}
+          {m.copyright()}
         </span>
       </div>
     </footer>
