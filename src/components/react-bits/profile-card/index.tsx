@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
-import Image, { StaticImageData } from "next/image";
 
 import "./ProfileCard.css";
 
 interface ProfileCardProps {
-  avatarUrl: StaticImageData;
+  avatarUrl: string;
   iconUrl?: string;
   grainUrl?: string;
   behindGradient?: string;
@@ -14,7 +13,7 @@ interface ProfileCardProps {
   enableTilt?: boolean;
   enableMobileTilt?: boolean;
   mobileTiltSensitivity?: number;
-  miniAvatarUrl?: StaticImageData;
+  miniAvatarUrl?: string;
   name?: string;
   title?: string;
   handle?: string;
@@ -325,11 +324,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           <div className="pc-shine" />
           <div className="pc-glare" />
           <div className="pc-content pc-avatar-content">
-            <Image
+            <img
               className="avatar"
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
-              priority
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = "none";
@@ -339,14 +337,13 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               <div className="pc-user-info">
                 <div className="pc-user-details">
                   <div className="pc-mini-avatar">
-                    <Image
+                    <img
                       src={miniAvatarUrl || avatarUrl}
                       alt={`${name || "User"} mini avatar`}
-                      priority
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.opacity = "0.5";
-                        target.src = avatarUrl.src;
+                        target.src = avatarUrl;
                       }}
                     />
                   </div>

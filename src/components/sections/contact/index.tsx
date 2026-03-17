@@ -1,8 +1,8 @@
-"use client";
-
 import * as z from "zod";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import { m } from "@/paraglide/messages";
 
 import PageSection from "@/components/common/page-section";
 import SectionTitle from "@/components/common/section-title";
@@ -10,31 +10,23 @@ import Input from "@/components/forms/input";
 import Label from "@/components/forms/label";
 import Textarea from "@/components/forms/textarea";
 import { Button } from "@/components/ui/button";
-
-import type { AsPage } from "@/lib/types";
 import FormError from "@/components/forms/error";
-import { toast } from "sonner";
 import { Spinner } from "@/components/ui/spinner";
 
-const Schema = z.object({
-  name: z.string().min(1, "El nombre es requerido"),
-  email: z.email("Ingrese un correo electrónico válido"),
-  description: z
-    .string()
-    .min(
-      1,
-      "Por favor, escribe lo más detallado posible tu idea para poder ayudarte",
-    ),
-});
-type FormValues = z.infer<typeof Schema>;
+import type { AsPage } from "@/lib/types";
+import { EmailSchema } from "@/utils/email.utils";
+import { sendEmail } from "@/utils/email.function";
+
+type FormValues = z.infer<typeof EmailSchema>;
 
 export default function Contact({ asPage }: AsPage) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting, isValidating },
-  } = useForm({
-    resolver: zodResolver(Schema),
+  } = useForm<FormValues>({
+    resolver: zodResolver(EmailSchema),
     reValidateMode: "onChange",
     defaultValues: {
       name: "",
@@ -45,55 +37,46 @@ export default function Contact({ asPage }: AsPage) {
 
   const handleFormSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      const fetchResponse = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (!fetchResponse.ok) throw new Error("Error al enviar el correo");
+      const emailSent = await sendEmail({ data });
+      if (!emailSent) throw new Error("Error al enviar el correo");
 
-      toast.success(
-        "Tu mensaje fue enviado con éxito. Me comunicaré contigo en la brevedad.",
-      );
+      toast.success(m.success_message());
+      reset();
     } catch (error) {
-      toast.error(
-        "Hubo un error al intentar enviar el formulario. Por favor, inténtalo de nuevo más tarde.",
-      );
+      toast.error(m.error_message());
     }
   };
 
   const formSubmitting = isValidating || isSubmitting;
   return (
     <PageSection asPage={asPage}>
-      <SectionTitle>Contáctame</SectionTitle>
+      <SectionTitle>{m.contact_me()}</SectionTitle>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <div className="mb-10 gap-10 sm:grid sm:grid-cols-2">
           <div className="max-sm:mb-10">
-            <Label htmlFor="name">Nombre</Label>
+            <Label htmlFor="name">{m.name_label()}</Label>
             <Input
               {...register("name")}
-              placeholder="Escribe tu nombre aquí"
+              placeholder={m.name_placeholder()}
               type="text"
             />
             {errors.name && <FormError>{errors.name.message}</FormError>}
           </div>
           <div>
-            <Label htmlFor="email">Correo</Label>
+            <Label htmlFor="email">{m.email_label()}</Label>
             <Input
               {...register("email")}
-              placeholder="Escribe tu correo electrónico"
+              placeholder={m.email_placeholder()}
               type="email"
             />
             {errors.email && <FormError>{errors.email.message}</FormError>}
           </div>
         </div>
         <div>
-          <Label>Cuéntame un poco en qué te puedo ayudar</Label>
+          <Label>{m.message_label()}</Label>
           <Textarea
             {...register("description")}
-            placeholder="Escribe tu mensaje..."
+            placeholder={m.message_placeholder()}
             rows={4}
             className="resize-none"
           />
@@ -108,7 +91,7 @@ export default function Contact({ asPage }: AsPage) {
           disabled={formSubmitting}
         >
           {formSubmitting && <Spinner />}
-          {formSubmitting ? "Enviando..." : "Contactar"}
+          {formSubmitting ? m.sending() : m.contact()}
         </Button>
       </form>
     </PageSection>

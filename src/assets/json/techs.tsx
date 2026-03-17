@@ -35,7 +35,6 @@ import TailwindCSS from "@/components/icons/techs/tailwind_css";
 import TansStackQuery from "@/components/icons/techs/tanstack_query";
 import Twilio from "@/components/icons/techs/twilio";
 import WordPress from "@/components/icons/techs/wordpress";
-import { text } from "stream/consumers";
 
 const TECHS = {
   REACT: { icon: React, text: "React" },

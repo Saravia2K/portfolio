@@ -1,15 +1,18 @@
+import { m } from "#/paraglide/messages";
 import SectionTitle from "@/components/common/section-title";
 import PageSection from "@/components/common/page-section";
 import type { EducationItem } from "@/lib/types";
+import { getLocale } from "@/paraglide/runtime";
 
 import EDUCATION from "@/assets/json/education";
 
+const locale = getLocale();
 export default function Education() {
   return (
     <PageSection>
-      <SectionTitle>Educación</SectionTitle>
+      <SectionTitle>{m.education_title()}</SectionTitle>
       {EDUCATION.map((item, i) => (
-        <EducationItem key={i} item={item} />
+        <EducationItem key={i} item={item[locale]} />
       ))}
     </PageSection>
   );
@@ -17,7 +20,7 @@ export default function Education() {
 
 const EducationItem = ({ item }: { item: EducationItem }) => {
   return (
-    <div className="border-b-2 pb-5 not-[:last-child]:mb-5">
+    <div className="border-b-2 pb-5 not-last:mb-5">
       <div className="grid grid-cols-2 text-[1.1rem] font-bold">
         <span>{item.institution}</span>
         <span className="text-end">{item.location}</span>

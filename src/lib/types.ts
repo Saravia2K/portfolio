@@ -1,5 +1,9 @@
-import { StaticImageData } from "next/image";
-import { JSX, SVGProps } from "react";
+import type { JSX, SVGProps } from "react";
+
+export type Multilangual<T> = {
+  es: T;
+  en: T;
+};
 
 export type Tech = {
   icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
@@ -29,11 +33,12 @@ export type EducationItem = {
   finished: boolean;
 };
 
-export type Project = {
+export type Project = Multilangual<{
   name: string;
   description: string;
+}> & {
   techs: Tech[];
-  banner: StaticImageData;
+  banner: string;
   web?: string;
 };
 

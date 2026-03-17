@@ -1,7 +1,6 @@
-"use client";
-
 import { Fragment, type ReactNode } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@tanstack/react-router";
+import { m } from "@/paraglide/messages";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -15,8 +14,8 @@ export default function IncompleteList<T>(props: IncompleteListProps<T>) {
     <>
       <Container>{processedList.map(render)}</Container>
       {!full && (
-        <Button className="mt-10" onClick={() => router.push(href)}>
-          Ver más <ArrowRight />
+        <Button className="mt-10" onClick={() => router.navigate({ to: href })}>
+          {m.see_more()} <ArrowRight />
         </Button>
       )}
     </>

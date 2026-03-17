@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { DetailedHTMLProps, TextareaHTMLAttributes } from "react";
+import type { DetailedHTMLProps, TextareaHTMLAttributes } from "react";
 
 export default function Textarea(props: TextareaProps) {
   const { className, ..._props } = props;

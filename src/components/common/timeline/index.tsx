@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import TimelineItem, { TimelineItemProps } from "./item";
+import type { ReactElement } from "react";
+import TimelineItem, { type TimelineItemProps } from "./item";
 
 export default function Timeline({ children }: TimelineProps) {
   return (
