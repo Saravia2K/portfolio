@@ -33,9 +33,10 @@ export type EducationItem = {
   finished: boolean;
 };
 
-export type Project = {
+export type Project = Multilangual<{
   name: string;
   description: string;
+}> & {
   techs: Tech[];
   banner: string;
   web?: string;
