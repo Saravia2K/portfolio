@@ -35,6 +35,7 @@ import TailwindCSS from "@/components/icons/techs/tailwind_css";
 import TansStackQuery from "@/components/icons/techs/tanstack_query";
 import Twilio from "@/components/icons/techs/twilio";
 import WordPress from "@/components/icons/techs/wordpress";
+import RubyOnRails from "@/components/icons/techs/ruby-on-rails";
 
 const TECHS = {
   REACT: { icon: React, text: "React" },
@@ -74,5 +75,6 @@ const TECHS = {
   DOTNET: { icon: DotNet, text: ".Net" },
   REACT_ROUTER: { icon: ReactRouter, text: "React Router Framework" },
   SASS: { icon: Sass, text: "Sass" },
+  RUBY_ON_RAILS: { icon: RubyOnRails, text: "Ruby on Rails" },
 };
 export default TECHS;

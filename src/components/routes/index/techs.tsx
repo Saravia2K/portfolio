@@ -50,7 +50,12 @@ const CATEGORIES = {
     TECHS.MONGODB,
     TECHS.SQLITE,
   ],
-  "fullstack frameworks": [TECHS.LARAVEL, TECHS.DJANGO, TECHS.DOTNET],
+  "fullstack frameworks": [
+    TECHS.LARAVEL,
+    TECHS.DJANGO,
+    TECHS.DOTNET,
+    TECHS.RUBY_ON_RAILS,
+  ],
   UI: [TECHS.SHADCN, TECHS.TAILWINDCSS, TECHS.SASS],
   [m.libraries()]: [
     TECHS.REDUX,
