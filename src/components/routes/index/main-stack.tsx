@@ -29,9 +29,7 @@ export default function MainStack() {
 
 const MAIN_STACK = [
   TECHS.REACT,
-  TECHS.NEXTJS,
-  TECHS.NESTJS,
+  TECHS.NODEJS,
   TECHS.POSTGRESQL,
   TECHS.MATERIALUI,
-  TECHS.TANSTACKQUERY,
 ];

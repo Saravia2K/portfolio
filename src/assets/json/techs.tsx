@@ -36,10 +36,13 @@ import TansStackQuery from "@/components/icons/techs/tanstack_query";
 import Twilio from "@/components/icons/techs/twilio";
 import WordPress from "@/components/icons/techs/wordpress";
 import RubyOnRails from "@/components/icons/techs/ruby-on-rails";
+import TanStack from "@/components/icons/techs/tanstack";
+import Vercel from "@/components/icons/techs/vercel";
 
 const TECHS = {
   REACT: { icon: React, text: "React" },
   NEXTJS: { icon: Nextjs, text: "Next.js" },
+  TANSTACK: { icon: TanStack, text: "TanStack Start" },
   NESTJS: { icon: NestJS, text: "NestJS" },
   POSTGRESQL: { icon: PostgreSQL, text: "PostgreSQL" },
   POSTMAN: { icon: Postman, text: "Postman" },
@@ -72,6 +75,7 @@ const TECHS = {
   WORDPRESS: { icon: WordPress, text: "WordPress" },
   FIREBASE: { icon: Firebase, text: "Firebase" },
   AWS: { icon: AWS, text: "AWS" },
+  VERCEL: { icon: Vercel, text: "Vercel" },
   DOTNET: { icon: DotNet, text: ".Net" },
   REACT_ROUTER: { icon: ReactRouter, text: "React Router Framework" },
   SASS: { icon: Sass, text: "Sass" },
