@@ -15,11 +15,12 @@ export type ExperienceItem = {
     from: string | Date;
     to: string | Date;
   };
-  jobTitle: string;
-  company: string;
+  jobTitle: Multilangual<string>;
+  company: Multilangual<string>;
   location: string;
   current?: boolean;
   techs: Tech[];
+  tasks: Multilangual<string[]>;
 };
 
 export type EducationItem = {

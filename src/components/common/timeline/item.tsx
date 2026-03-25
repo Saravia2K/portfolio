@@ -1,10 +1,12 @@
 import { type PropsWithChildren } from "react";
 import dayjs from "dayjs";
 import { m } from "#/paraglide/messages";
+import { getLocale } from "#/paraglide/runtime";
 
 import TechItem from "../tech-item";
 import type { ExperienceItem } from "@/lib/types";
 
+const locale = getLocale();
 export default function TimelineItem(props: TimelineItemProps) {
   const { dates, jobTitle, company, location, current, children, techs } =
     props;
@@ -30,7 +32,8 @@ export default function TimelineItem(props: TimelineItemProps) {
         <span className="text-end">{location}</span>
       </div>
       <h3 className="text-chart-4 flex justify-between text-lg font-semibold">
-        <span>{jobTitle}</span> <span className="text-end">{company}</span>
+        <span>{jobTitle[locale]}</span>{" "}
+        <span className="text-end">{company[locale]}</span>
       </h3>
       <div className="mt-4 mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
         {children}
