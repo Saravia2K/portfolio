@@ -36,13 +36,7 @@ export default function Techs() {
 
 const CATEGORIES = {
   frontend: [TECHS.ANGULAR, TECHS.ASTRO, TECHS.REACT_ROUTER],
-  backend: [
-    TECHS.EXPRESSJS,
-    TECHS.FASTAPI,
-    TECHS.NODEJS,
-    TECHS.SUPABASE,
-    TECHS.BETTERAUTH,
-  ],
+  backend: [TECHS.EXPRESSJS, TECHS.FASTAPI, TECHS.NODEJS, TECHS.SUPABASE],
   [m.databases()]: [
     TECHS.SQLSERVER,
     TECHS.REDIS,
@@ -60,6 +54,7 @@ const CATEGORIES = {
   [m.libraries()]: [
     TECHS.REDUX,
     TECHS.RXJS,
+    TECHS.BETTERAUTH,
     TECHS.SOCKETIO,
     TECHS.STYLED_COMPONENTS,
   ],
