@@ -54,6 +54,7 @@ const EXPERIENCE: ExperienceItem[] = [
       TECHS.POSTGRESQL,
       TECHS.REDIS,
       TECHS.AWS,
+      TECHS.ATLASSIAN,
     ],
     tasks: {
       en: [
@@ -79,7 +80,7 @@ const EXPERIENCE: ExperienceItem[] = [
       from: "2023-08-01",
       to: "2024-03-01",
     },
-    techs: [TECHS.ANGULAR, TECHS.DOTNET, TECHS.SQLSERVER],
+    techs: [TECHS.ANGULAR, TECHS.DOTNET, TECHS.SQLSERVER, TECHS.ATLASSIAN],
     tasks: {
       en: [
         "Maintenance and development of new functionalities in a complex system, made in Angular 14 with Typescript, for managing updatable metrics in real time for a call center.",
@@ -104,7 +105,7 @@ const EXPERIENCE: ExperienceItem[] = [
       from: "2024-03-01",
       to: "2026-02-13",
     },
-    techs: [TECHS.ANGULAR, TECHS.RXJS, TECHS.POSTMAN],
+    techs: [TECHS.ANGULAR, TECHS.RXJS, TECHS.POSTMAN, TECHS.ATLASSIAN],
     tasks: {
       en: [
         "Design, implementation and maintenance of a banking system, where users can check balances, cards, loans, carry out their own and third-party transactions, etc.",
@@ -115,6 +116,44 @@ const EXPERIENCE: ExperienceItem[] = [
         "Diseño, implementación y mantenimiento de un sistema bancario, donde los usuarios pueden consultar saldos, tarjetas, préstamos, realizar transacciones propias y de terceros, etc.",
         "Integración de scripts de terceros para el manejo de métricas para uso interno de directivas, tales como Glia, Google Analytics, etc.",
         "Revisión, corrección y planificación de nuevas funcionalidades dentro del sistema junto a un equipo de diseñadores, PO, PM y distintos líderes técnicos para dar solución a requerimientos técnicos.",
+      ],
+    },
+  },
+  {
+    jobTitle: {
+      en: "Full Stack Engineer",
+      es: "Ingeniero Full Stack",
+    },
+    location: "USA",
+    company: { en: "Creative Artists Agency", es: "Creative Artists Agency" },
+    dates: {
+      from: "2026-02-02",
+      to: "2026-03-06",
+    },
+    techs: [
+      TECHS.NODEJS,
+      TECHS.EXPRESSJS,
+      TECHS.REACT,
+      TECHS.REDUX,
+      TECHS.TANSTACKQUERY,
+      TECHS.TAILWINDCSS,
+      TECHS.MONGODB,
+      TECHS.SASS,
+      TECHS.STYLED_COMPONENTS,
+      TECHS.ATLASSIAN,
+    ],
+    tasks: {
+      en: [
+        "Maintenance and development of new functionalities in SOPAs made in React that served as internal applications for signing contracts, calculating fees, scheduling and keeping track of the intellectual property of the works.",
+        "Maintenance of global application states handled in Redux that were to populate all sections of the applications, obtain information from the deals, etc.",
+        "I functioned as a code reviewer for PRs within the organization's repositories to ensure code quality and best practices.",
+        "I developed unit tests for each new feature added to the components or if new components were created, with the goal of ensuring the granularity of the implemented features and being prepared for any scenario.",
+      ],
+      es: [
+        "Mantenimiento y desarrollo de nuevas funcionalidades en SOPAs hechas en React que servían como aplicaciones internas para la firma de contratos, cálculo de honorarios, programación y seguimiento de la propiedad intelectual de las obras.",
+        "Mantenimiento de estados globales de la aplicación manejados en Redux que debían poblar todas las secciones de las aplicaciones, obtener información de los deals, etc.",
+        "Funcioné como revisor de código para PRs dentro de los repositorios de la organización para asegurar la calidad del código y las buenas prácticas.",
+        "Desarrollé pruebas unitarias para cada característica nueva que se añadiera a los componentes o si se creaban componentes nuevos, con el objetivo de asegurar  la granularidad de las características implementadas y estar preparados ante cualquier escenario.",
       ],
     },
   },
